@@ -1,0 +1,88 @@
+<meta charset="utf-8">
+<div class="request-form-container">
+  <form class="request-form" *ngIf="addRequestForm" [formGroup]="addRequestForm">
+    <div class="title">
+      <span>Izveidot pieprasījumu</span>
+    </div>
+    <div class="request-form-content">
+      <div class="request-form-field">
+        <label class="label" for="device">Ierīce</label>
+        <input
+          [ngClass]="{
+                'field-error':
+                  addRequestForm.get('device')?.invalid &&
+                  addRequestForm.get('device')?.touched
+              }"
+          formControlName="device"
+          class="input"
+          id="device"
+          placeholder="Ievadiet ierīci"
+          type="text"/>
+        <small
+          *ngIf="
+                addRequestForm.get('device')?.touched &&
+                addRequestForm.get('device')?.hasError('required')
+              "
+          class="error">
+          Nedrīkst būt tukšs
+        </small>
+      </div>
+      <div class="request-form-field">
+        <label class="label" for="parameters">Parametri</label>
+        <input
+          [ngClass]="{
+                'field-error':
+                  addRequestForm.get('parameters')?.invalid &&
+                  addRequestForm.get('parameters')?.touched
+              }"
+          formControlName="parameters"
+          class="input"
+          id="parameters"
+          placeholder="Ievadiet parametrus"
+          type="text"/>
+        <small
+          *ngIf="
+                addRequestForm.get('parameters')?.touched &&
+                addRequestForm.get('parameters')?.hasError('required')
+              "
+          class="error">
+          Nedrīkst būt tukšs
+        </small>
+      </div>
+      <div class="request-form-field">
+        <label class="label" for="reason">Iemesls</label>
+        <input
+          [ngClass]="{
+                'field-error':
+                  addRequestForm.get('reason')?.invalid &&
+                  addRequestForm.get('reason')?.touched
+              }"
+          formControlName="reason"
+          class="input"
+          id="reason"
+          placeholder="Pamatojiet iemeslu"
+          type="text"/>
+        <small
+          *ngIf="
+                addRequestForm.get('reason')?.touched &&
+                addRequestForm.get('reason')?.hasError('required')
+              "
+          class="error">
+          Nedrīkst būt tukšs
+        </small>
+      </div>
+      <button
+        [disabled]="addRequestForm.invalid"
+        (click)="addRequest()"
+        class="submit-btn"
+        routerLink="/all-requests"
+        type="button">
+        Izveidot pieprasījumu
+      </button>
+      <button class="back-btn" routerLink="/all-requests">Atgriezties</button>
+
+    </div>
+  </form>
+</div>
+
+

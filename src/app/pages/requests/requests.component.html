@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<div class="requests-container">
+  <div class="requests">
+    <h1 class="title">Pieprasījumu sistēma</h1>
+    <table class="requests-table">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Ierīce</th>
+        <th>Parametri</th>
+        <th>Iemesls</th>
+        <th>Izveidošanas datums</th>
+        <th>Statuss</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let request of requests; let i = index">
+        <td>{{request.id}}</td>
+        <td>{{request.device}}</td>
+        <td>{{request.parameters}}</td>
+        <td>{{request.reason}}</td>
+        <td>{{request.creationDate}}</td>
+        <td>{{request.status}}</td>
+        <td>
+          <button class="delete-btn" (click)="delete(i)">X</button>
+        </td>
+        <td>
+          <button class="approve-btn" *ngIf="request.status == 'izskata'" (click)="updateStatus(i,'apstiprināts')">
+            Apstiprināt
+          </button>
+        </td>
+        <td>
+          <button class="deny-btn" *ngIf="request.status == 'izskata'" (click)="updateStatus(i,'noraidīts')">Noraidīt
+          </button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+.header {
+  font-family: sans-serif;
+  padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #3C474B;
+  gap: 10px;
+}
+
+.header-link {
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid transparent;
+
+  &:hover {
+    color: royalblue;
+  }
+}
+
+.active {
+  color: black;
+  border-bottom-color: black;
+
+  &:hover {
+    color: black;
+  }
+}

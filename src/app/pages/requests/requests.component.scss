@@ -1,0 +1,34 @@
+.requests-container {
+  font-family: sans-serif;
+}
+
+.requests {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 10px;
+  min-height: 100vh;
+}
+
+.requests-table {
+  background: #D5D5D5;
+  border-collapse: separate;
+  margin: 25px 0;
+  font-size: 0.9em;
+  justify-content: space-evenly;
+  padding: 5px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-spacing: 100px;
+}
+
+.delete-btn {
+  background-color: red;
+}
+
+.approve-btn {
+  background-color: royalblue;
+}
+
+.deny-btn {
+  background-color: brown;
+}
